@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/_all-skins.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dataTables.bootstrap.css')}}">
+
+</head>
+<body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <nav class="navbar navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="/" class="navbar-brand"><b>Inicio</b></a>
+                        
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                          <li class="active"><a href="/cursos">cursos <span class="sr-only">(current)</span></a></li>
+                          <!-- <li class="dropdown"> -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content-wrapper">
+
+            {% block body %}
+
+            {% endblock %}
+            
+        </div>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 0.1
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+
+    <script>
+        $(function () {
+            $("#dataphone").DataTable();
+
+        });
+    </script>
+
+</body>
+</html>

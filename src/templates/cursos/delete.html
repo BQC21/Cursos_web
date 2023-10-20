@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+    <section class="content">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <center>
+                    <h3 class="box-title">Eliminar curso</h3>
+                </center>
+            </div>
+
+            <form class="form-horizontal" method="POST" action="/cursos/deletecurso">
+                {% for row in data %}
+                <div class="box-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Nombre</label>
+
+                        <div class="col-sm-10">
+                            <input name="nombre" value="{{ row[1] }}" type="text" class="form-control" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">creditos</label>
+
+                        <div class="col-sm-10">
+                            <input name="creditos" value="{{ row[2] }}" type="text" class="form-control" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">ciclo</label>
+
+                        <div class="col-sm-10">
+                            <input name="ciclo" value="{{ row[3] }}" type="text" class="form-control" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">nota</label>
+
+                        <div class="col-sm-10">
+                            <input name="nota" value="{{ row[4] }}" type="text" class="form-control" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">estado</label>
+
+                        <div class="col-sm-10">
+                            <input name="estado" value="{{ row[5] }}" type="text" class="form-control" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-footer">
+                    <a href="/cursos/"><button type="button" class="btn btn-default">Cancel</button></a>
+                    <input name="delete" type="submit" class="btn btn-info pull-right" value="Delete">
+                </div>
+                {% endfor %}
+            </form>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
